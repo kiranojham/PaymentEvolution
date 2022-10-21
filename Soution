@@ -23,7 +23,7 @@ class Solution {
             current_key_idx = hashMap.get(number);
             required = target - number;
  
-            if(hashMap.containsValue(required)){
+            if(hashMap.containsKey(required)){
                required_key_idx = hashMap.get(required);
                solution[0]=required_key_idx;
                solution[1]=current_key_idx;
