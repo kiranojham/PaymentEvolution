@@ -1,0 +1,35 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int current_key_idx, required, required_key_idx;
+        //defining a hashmap
+        Map<Integer, Integer> hashMap= new HashMap<Integer, Integer>();
+         
+        int[] solution=new int[2];
+        //converting nums array to hashmap
+        for(int i = 0; i < nums.length; i++){
+            hashMap.put(nums[i],i);
+        }
+        System.out.println(hashMap);
+        
+        //iterate hashmap to find sum of target
+      for(int number:hashMap.keySet()){
+           System.out.println(number+"number");
+            current_key_idx = hashMap.get(number);
+           System.out.println(current_key_idx+"current_key_idx");
+            required = target - number;
+          System.out.println(required+"required");
+            if(hashMap.containsValue(required)){
+               required_key_idx = hashMap.get(required);
+                System.out.println(required_key_idx+"required_key_idx");
+               solution[0]=current_key_idx;
+               solution[1]=required_key_idx;
+            System.out.println("solution:");
+            System.out.println(solution[0]+","+solution[1]);
+                 }
+          
+      }
+        return solution;
+    }
+    
+}
