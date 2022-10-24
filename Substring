@@ -1,0 +1,25 @@
+class Substring {
+    public int lengthOfLongestSubstring(String str) {
+        int max_length=0;
+        String buffer="";
+       char arr[]=str.toCharArray();
+        //if only one character is in the string
+        if(arr==null)
+            return 0;
+        //if str is empty
+        if(arr.length==1)
+            return 1;
+        
+        for(char c : arr){
+            String current_value=String.valueOf(c);
+            //if original string value is aready present in buffer string
+            if(buffer.contains(current_value)){
+                buffer=buffer.substring(buffer.indexOf(current_value)+1);
+            }
+            
+            buffer=buffer+String.valueOf(c);
+            max_length=Math.max(buffer.length(),max_length);
+        }
+        return max_length;
+    }
+}
